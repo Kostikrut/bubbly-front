@@ -50,10 +50,34 @@ export const useChatStore = create(
               useAuthStore.getState().logout();
             }
           }
+
+          get().getUnreadMessagesCount();
         } finally {
           if (useAuthStore.getState().authUser) {
             set({ isUsersLoading: false });
           }
+        }
+      },
+
+      getUnreadMessagesCount: async () => {
+        if (!useAuthStore.getState().authUser) return;
+        try {
+          const userIds = get().users.map((user) => user._id);
+
+          const notificationCounts = await axiosInstance.get("/users/unreadCount", {
+            params: { users: userIds },
+          });
+
+          for (const user of notificationCounts.data.data.counts) {
+            set((state) => ({
+              unreadMessagesCount: {
+                ...state.unreadMessagesCount,
+                [user._id]: user.count,
+              },
+            }));
+          }
+        } catch (err) {
+          void err; // avoid ueslint warning
         }
       },
 

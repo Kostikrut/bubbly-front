@@ -14,6 +14,7 @@ const Sidebar = () => {
     setSelectedUser,
     isUsersLoading,
     newMessageFromUsers,
+    getUnreadMessagesCount,
     unreadMessagesCount,
   } = useChatStore();
   const { onlineUsers, authUser } = useAuthStore();
@@ -33,6 +34,12 @@ const Sidebar = () => {
       cancelled = true;
     };
   }, [authUser, getContacts]);
+
+  useEffect(() => {
+    if (users.length > 0) {
+      getUnreadMessagesCount();
+    }
+  }, [users, getUnreadMessagesCount]);
 
   const filteredUsers = showOnlineOnly ? users.filter((user) => onlineUsers.includes(user._id)) : users;
 
