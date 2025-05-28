@@ -4,7 +4,6 @@ import { useAuthStore } from "../../store/useAuthStore";
 import setErrorToast from "../../utils/errorToast";
 import blobToBase64 from "../../utils/blobToBase64";
 
-// Subcomponents
 import EmojiPickerButton from "./EmojiPickerButton";
 import ImageUploadButton from "./ImageUploadButton";
 import FileAttachmentButton from "./FileAttachmentButton";

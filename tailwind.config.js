@@ -11,6 +11,9 @@ export default {
       gridTemplateColumns: {
         11: "repeat(11, minmax(0, 1fr))",
       },
+      height: {
+        "screen-minus-header": "[calc(100vh - 4rem)]",
+      },
     },
   },
 };

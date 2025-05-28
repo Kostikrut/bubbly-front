@@ -1,4 +1,4 @@
-import { X, Plus, Minus, UserMinus, UserPlus, BookX } from "lucide-react";
+import { ArrowLeft, Plus, Minus, UserMinus, UserPlus, BookX } from "lucide-react";
 import { useState } from "react";
 
 import { useAuthStore } from "../store/useAuthStore";
@@ -60,7 +60,7 @@ const ChatHeader = () => {
           </button>
 
           <button onClick={() => setSelectedUser(null)} className="btn btn-ghost btn-sm" title="Close chat">
-            <X size={18} />
+            <ArrowLeft size={18} />
           </button>
 
           <ClearChatsModal isOpen={showClearChat} onClose={() => setShowClearChat(false)} userId={selectedUser._id} />
