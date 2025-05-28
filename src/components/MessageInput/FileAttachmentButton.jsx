@@ -4,7 +4,7 @@ function FileAttachmentButton({ onClick, disabled, hasFile }) {
   return (
     <button
       type="button"
-      className={`hidden sm:flex btn btn-circle ${hasFile ? "text-emerald-500" : "text-zinc-400"}`}
+      className={`sm:flex btn btn-circle ${hasFile ? "text-emerald-500" : "text-zinc-400"}`}
       onClick={onClick}
       disabled={disabled}
     >

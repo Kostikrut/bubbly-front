@@ -6,7 +6,7 @@ function ImageUploadButton({ onChange, fileInputRef, hasImage, isDisabled }) {
       <input type="file" accept="image/*" className="hidden" ref={fileInputRef} onChange={onChange} />
       <button
         type="button"
-        className={`hidden sm:flex btn btn-circle ${hasImage ? "text-emerald-500" : "text-zinc-400"}`}
+        className={`sm:flex btn btn-circle ${hasImage ? "text-emerald-500" : "text-zinc-400"}`}
         onClick={() => fileInputRef.current?.click()}
         disabled={isDisabled}
       >
