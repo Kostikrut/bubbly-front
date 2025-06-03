@@ -71,6 +71,7 @@ const LoginPage = () => {
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               />
+
               <button
                 type="button"
                 className="absolute inset-y-0 right-0 pr-3 flex items-center"
@@ -96,6 +97,11 @@ const LoginPage = () => {
             )}
           </button>
         </form>
+
+        <div className="flex flex-col p-4 mt-5">
+          <label htmlFor="">Email: john@example.com</label>
+          <label htmlFor="">Password: test1234</label>
+        </div>
 
         <div className="text-center">
           <p className="text-base-content/35">
